@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Política de Privacidade — Radar B3</title>
+  <meta name="description" content="Como o Radar B3 acessa o Google Drive com o escopo drive.file, para que usa os arquivos autorizados, como protege credenciais e como revogar o acesso.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0b63c5">
+  <link rel="canonical" href="https://guilasserrano-code.github.io/privacidade.html">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b63c5'/%3E%3Cpath d='M8 23V14M14 23V9M20 23V16M26 23V12' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">RB3</span>
+        <span class="brand-text">Radar B3</span>
+      </a>
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="privacidade.html" aria-current="page">Privacidade</a></li>
+          <li><a href="termos.html">Termos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero wrap">
+      <p class="eyebrow">Transparência e controle</p>
+      <h1>Política de Privacidade</h1>
+      <p class="lead">Esta política explica como o Radar B3 acessa, utiliza, armazena e protege informações no contexto de sua integração com o Google Drive.</p>
+      <p class="meta">Última atualização: 17 de novembro de 2026.</p>
+    </section>
+
+    <section class="section wrap">
+      <div class="prose">
+        <h2>1. Responsável e contato</h2>
+        <p>O Radar B3 é um projeto pessoal e experimental, mantido pelo titular da conta GitHub <strong>guilasserrano-code</strong>. O responsável pelo tratamento das informações descritas nesta política pode ser contatado pelo e-mail <a href="mailto:guilas.serrano@gmail.com">guilas.serrano@gmail.com</a>.</p>
+        <p>O aplicativo não oferece cadastro público, não cria contas de usuário e não é operado como serviço comercial para terceiros.</p>
+
+        <h2>2. Acesso restrito ao Google Drive</h2>
+        <p>O Radar B3 solicita apenas o escopo OAuth <code>drive.file</code>. Ele não solicita acesso amplo, irrestrito ou à totalidade dos arquivos do Google Drive.</p>
+        <p>O aplicativo não solicita escopos de perfil, contatos, e-mail, calendário ou localização. A autorização é vinculada à conta Google utilizada e pode ser revogada a qualquer momento.</p>
+
+        <div class="table-wrap">
+          <table>
+            <caption class="table-caption">Escopo solicitado e limites de acesso</caption>
+            <thead>
+              <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Detalhe</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Escopo</th>
+                <td><code>https://www.googleapis.com/auth/drive.file</code></td>
+              </tr>
+              <tr>
+                <th scope="row">O que permite</th>
+                <td>Criar, ler, atualizar e excluir apenas os arquivos que o próprio aplicativo criou ou que o usuário selecionou e abriu explicitamente para uso com ele.</td>
+              </tr>
+              <tr>
+                <th scope="row">O que não permite</th>
+                <td>Ver, alterar ou excluir outros arquivos do Drive, pastas não autorizadas ou conteúdos de terceiros.</td>
+              </tr>
+              <tr>
+                <th scope="row">Como é concedido</th>
+                <td>Por consentimento explícito na tela de autorização do Google, vinculado à conta do próprio titular. O acesso pode ser revogado a qualquer momento.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>3. Finalidades de leitura e publicação</h2>
+        <p>Os arquivos autorizados são utilizados exclusivamente para operar o Radar B3 em favor do próprio titular:</p>
+        <ul>
+          <li><strong>Leitura:</strong> abrir planilhas, séries históricas, relatórios e arquivos de configuração que o usuário tenha autorizado, a fim de alimentar as análises, conferências e cálculos do sistema.</li>
+          <li><strong>Publicação:</strong> gravar relatórios, painéis, resultados e arquivos de acompanhamento gerados pelo sistema em arquivo ou pasta autorizada, inclusive pasta criada pelo próprio aplicativo.</li>
+          <li><strong>Consistência:</strong> verificar se os arquivos publicados correspondem ao conteúdo gerado, evitando duplicidade e perda de informação.</li>
+        </ul>
+        <p>Não há outras finalidades. O conteúdo dos arquivos não é utilizado para publicidade, perfilamento comercial, venda, compartilhamento com terceiros ou qualquer finalidade alheia à operação do aplicativo.</p>
+
+        <h2>4. Credenciais e secrets</h2>
+        <p>A integração OAuth é executada em fluxos automatizados no GitHub Actions. As credenciais de acesso (client ID, client secret e tokens de atualização) são armazenadas como <em>secrets</em> do GitHub Actions, vinculadas a um repositório privado.</p>
+        <ul>
+          <li>As credenciais não são gravadas neste site, não aparecem em páginas públicas e não são versionadas no código-fonte.</li>
+          <li>O acesso aos secrets é restrito ao proprietário do repositório privado, com mascaramento dos valores nos logs das execuções.</li>
+          <li>Os tokens emitidos pelo Google ficam limitados ao escopo <code>drive.file</code> e podem ser invalidados imediatamente pela revogação do acesso.</li>
+        </ul>
+
+        <h2>5. Retenção</h2>
+        <ul>
+          <li><strong>Credenciais e tokens:</strong> mantidos apenas enquanto a integração estiver ativa. São excluídos quando o acesso é revogado, quando a integração é descontinuada ou mediante solicitação do titular.</li>
+          <li><strong>Arquivos no Google Drive:</strong> pertencem à conta do usuário. O aplicativo não mantém cópia própria além do necessário para gerar e conferir os relatórios, e o usuário pode excluí-los a qualquer momento diretamente no Drive.</li>
+          <li><strong>Registros técnicos:</strong> os logs de execução seguem os prazos de retenção do GitHub Actions e não incluem tokens nem o conteúdo dos arquivos manipulados.</li>
+        </ul>
+
+        <h2>6. Proteção das informações</h2>
+        <p>O projeto adota medidas compatíveis com seu caráter pessoal e experimental, entre elas:</p>
+        <ul>
+          <li>uso de HTTPS/TLS nas comunicações com o site, com o Google Drive e com os serviços de automação;</li>
+          <li>princípio do menor privilégio, com escopo OAuth restrito e acesso somente aos arquivos autorizados;</li>
+          <li>repositório privado, acesso restrito ao proprietário e recomendação de autenticação em dois fatores nas contas GitHub e Google;</li>
+          <li>segregação de credenciais em secrets, sem exposição em código, páginas ou logs;</li>
+          <li>ausência de cache público ou de publicação automática do conteúdo dos arquivos do Drive;</li>
+          <li>revisão periódica de acessos e revogação imediata quando necessário.</li>
+        </ul>
+        <p>Nenhum sistema é totalmente imune a incidentes. Caso ocorra um incidente de segurança que possa afetar dados pessoais, o titular será informado pelos canais de contato, conforme a legislação aplicável.</p>
+
+        <h2>7. Compartilhamento e Uso Limitado</h2>
+        <p>Os dados não são vendidos, alugados ou cedidos a terceiros. O tratamento ocorre apenas com os provedores necessários à operação: Google (APIs do Drive) e GitHub (hospedagem do site e automação), sujeitos às suas próprias políticas. Divulgações somente podem ocorrer por obrigação legal ou determinação de autoridade competente.</p>
+        <p>O uso das informações recebidas das APIs do Google pelo Radar B3 está em conformidade com a <a href="https://developers.google.com/terms/api-services-user-data-policy">Política de Dados do Usuário dos Serviços de API do Google</a>, incluindo os requisitos de Uso Limitado (Limited Use). Em especial, esses dados não são usados para publicidade, não são vendidos e não são lidos por pessoas, exceto com consentimento explícito do titular, por motivos de segurança ou por exigência legal.</p>
+
+        <h2>8. Revogação de acesso</h2>
+        <p>O titular pode revogar o acesso do Radar B3 à sua conta Google a qualquer momento:</p>
+        <ol>
+          <li>Acesse <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a> com a conta utilizada na autorização.</li>
+          <li>Localize o aplicativo <strong>Radar B3</strong> e remova o acesso.</li>
+          <li>Opcionalmente, exclua os secrets correspondentes no repositório privado de automação.</li>
+          <li>Se desejar a exclusão de informações mantidas pelo projeto, envie um pedido para <a href="mailto:guilas.serrano@gmail.com">guilas.serrano@gmail.com</a>.</li>
+        </ol>
+        <p>A revogação invalida os tokens de atualização emitidos e interrompe a renovação do acesso: a partir daí, o aplicativo deixa de conseguir ler ou publicar arquivos. Pedidos de exclusão são atendidos em até 30 dias, ressalvadas obrigações legais de retenção.</p>
+
+        <h2>9. Direitos do titular</h2>
+        <p>Nos termos da Lei Geral de Proteção de Dados (LGPD), o titular pode solicitar, pelo canal de contato acima:</p>
+        <ul>
+          <li>confirmação da existência de tratamento e acesso às informações;</li>
+          <li>correção de dados incompletos, inexatos ou desatualizados;</li>
+          <li>anonimização, bloqueio ou eliminação de dados desnecessários ou excessivos;</li>
+          <li>portabilidade, quando aplicável;</li>
+          <li>informação sobre compartilhamento de dados;</li>
+          <li>revogação do consentimento e eliminação dos dados tratados com base nele.</li>
+        </ul>
+
+        <h2>10. Cookies e hospedagem</h2>
+        <p>Este site é estático e não utiliza cookies, ferramentas de analytics, pixels de rastreamento ou conteúdo incorporado de terceiros. O GitHub, como provedor de hospedagem, pode registrar dados técnicos de acesso conforme a <a href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement">Política de Privacidade do GitHub</a>.</p>
+
+        <h2>11. Alterações desta política</h2>
+        <p>Esta política pode ser atualizada para refletir mudanças no funcionamento do aplicativo ou na legislação aplicável. A versão vigente é sempre a publicada nesta página, com a data de atualização indicada no topo.</p>
+
+        <h2>12. Contato</h2>
+        <p>Para dúvidas, solicitações ou exercício de direitos, escreva para <a href="mailto:guilas.serrano@gmail.com">guilas.serrano@gmail.com</a>. As condições de uso do sistema estão nos <a href="termos.html">Termos de Uso</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <nav aria-label="Links do rodapé">
+        <a href="index.html">Início</a>
+        <a href="privacidade.html">Privacidade</a>
+        <a href="termos.html">Termos</a>
+        <a href="mailto:guilas.serrano@gmail.com">guilas.serrano@gmail.com</a>
+      </nav>
+      <p class="fine">Radar B3 é um projeto pessoal e experimental de pesquisa. Este site é informativo e não constitui recomendação, oferta ou consultoria de investimento. Não há execução automática de operações reais.</p>
+      <p class="fine">© 2026 Radar B3.</p>
+    </div>
+  </footer>
+</body>
+</html>
